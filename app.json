@@ -13,14 +13,14 @@
       "googleServicesFile": "./GoogleService-Info.plist"
     },
     "android": {
-    "adaptiveIcon": {
-      "foregroundImage": "./assets/images/logo.png",
-      "backgroundColor": "#ffffff"
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/logo.png",
+        "backgroundColor": "#ffffff"
+      },
+      "edgeToEdgeEnabled": true,
+      "googleServicesFile": "./google-services.json",
+      "package": "com.byokaicouncil.ai"
     },
-    "edgeToEdgeEnabled": true,
-    "googleServicesFile": "./google-services.json",
-    "package": "com.byokaicouncil.ai"
-  },
     "web": {
       "bundler": "metro",
       "output": "static",
@@ -41,6 +41,12 @@
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "1e9a4124-62b6-4fff-8f25-c97dbcc17e21"
+      }
     }
   }
 }
