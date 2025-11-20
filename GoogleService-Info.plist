@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>API_KEY</key>
+	<string>AIzaSyAw6aRvSyM1a2C30W3ZSG4Tj6JRizY_nB4</string>
+	<key>GCM_SENDER_ID</key>
+	<string>1059955046558</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.YASKOVBS.TheHiveMindRobot</string>
+	<key>PROJECT_ID</key>
+	<string>the-hive-mind-robot</string>
+	<key>STORAGE_BUCKET</key>
+	<string>the-hive-mind-robot.firebasestorage.app</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:1059955046558:ios:54c1ea6ce626e1eeb1238f</string>
+</dict>
+</plist>

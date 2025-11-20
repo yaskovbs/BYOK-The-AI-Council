@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1059955046558",
+    "project_id": "the-hive-mind-robot",
+    "storage_bucket": "the-hive-mind-robot.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1059955046558:android:0e4bab1a6a619c45b1238f",
+        "android_client_info": {
+          "package_name": "com.YASKOVBS.TheHiveMindRobot"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDluW7sQGZptoOI_Pzq7oYdGaK0BrsNQp8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
