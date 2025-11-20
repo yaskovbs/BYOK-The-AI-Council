@@ -7,7 +7,7 @@
     "development": {
       "developmentClient": true,
       "distribution": "internal",
-      "cache": false,
+      "cache": {},
       "env": {
         "NPM_CONFIG_LEGACY_PEER_DEPS": "true"
       }
