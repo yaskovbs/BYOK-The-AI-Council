@@ -13,7 +13,7 @@
     },
     "production": {
       "autoIncrement": true,
-      "cache": false,
+      "cache": {},
       "env": {
         "NPM_CONFIG_LEGACY_PEER_DEPS": "true"
       }
