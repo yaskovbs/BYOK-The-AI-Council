@@ -58,13 +58,11 @@ export function CouncilVisualizer() {
       />
 
       <View style={styles.header}>
-        <Image
-          source={require('@/assets/images/logo.png')}
-          style={styles.headerLogo}
-          resizeMode="contain"
-        />
+        <View style={styles.headerLogo}>
+          <Text style={styles.headerLogoEmoji}>🐝</Text>
+        </View>
         <View style={styles.headerTextContainer}>
-          <Text style={styles.title}>🐝 THE AI COUNCIL</Text>
+          <Text style={styles.title}>THE AI COUNCIL</Text>
           <Text style={styles.subtitle}>Decentralized Intelligence Network</Text>
         </View>
       </View>
@@ -154,7 +152,14 @@ const styles = StyleSheet.create({
   headerLogo: {
     width: 50,
     height: 50,
+    borderRadius: theme.borderRadius.full,
+    backgroundColor: theme.colors.surface,
+    alignItems: 'center',
+    justifyContent: 'center',
     marginRight: theme.spacing.md,
+  },
+  headerLogoEmoji: {
+    fontSize: 32,
   },
   headerTextContainer: {
     flex: 1,

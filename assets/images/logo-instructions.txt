@@ -1,0 +1,57 @@
+📌 LOGO SETUP INSTRUCTIONS
+
+The app is currently using an emoji (🐝) as a placeholder logo.
+
+To add your custom BYOK - The AI Council logo:
+
+1. Download your logo image from:
+   https://cdn-ai.onspace.ai/onspace/files/gNNrG88EjJGQN5fbMMNXFW/Google_AI_Studio_2025-11-20T07_59_02.364Z.png
+
+2. Save it with these names in the assets/images/ folder:
+   - logo.png (1024x1024 - main logo)
+   - icon.png (1024x1024 - app icon)
+   - adaptive-icon.png (1024x1024 - Android adaptive icon)
+   - favicon.png (48x48 - web favicon)
+
+3. Update these files to use the logo:
+   
+   app/login.tsx:
+   Replace:
+     <View style={styles.logoPlaceholder}>
+       <Text style={styles.logoEmoji}>🐝</Text>
+     </View>
+   With:
+     <Image
+       source={require('@/assets/images/logo.png')}
+       style={styles.logo}
+       resizeMode="contain"
+     />
+   
+   app/(tabs)/chat.tsx:
+   Replace:
+     <View style={styles.headerLogo}>
+       <Text style={styles.headerLogoEmoji}>🐝</Text>
+     </View>
+   With:
+     <Image
+       source={require('@/assets/images/logo.png')}
+       style={styles.headerLogo}
+       resizeMode="contain"
+     />
+   
+   components/ui/CouncilVisualizer.tsx:
+   Replace:
+     <View style={styles.headerLogo}>
+       <Text style={styles.headerLogoEmoji}>🐝</Text>
+     </View>
+   With:
+     <Image
+       source={require('@/assets/images/logo.png')}
+       style={styles.headerLogo}
+       resizeMode="contain"
+     />
+
+4. The app.json is already configured to use the logo files.
+
+Current Status: ✅ App works with emoji placeholder
+Action Required: Upload logo images to enable custom branding

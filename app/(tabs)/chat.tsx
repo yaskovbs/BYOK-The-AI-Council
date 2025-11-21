@@ -36,11 +36,9 @@ export default function ChatScreen() {
       >
         <View style={styles.header}>
           <View style={styles.headerTop}>
-            <Image
-              source={require('@/assets/images/logo.png')}
-              style={styles.headerLogo}
-              resizeMode="contain"
-            />
+            <View style={styles.headerLogo}>
+              <Text style={styles.headerLogoEmoji}>🐝</Text>
+            </View>
             <View style={styles.headerTextContainer}>
               <Text style={styles.headerTitle}>AI Council Chat</Text>
               <Text style={styles.headerPersonality}>
@@ -111,7 +109,14 @@ const styles = StyleSheet.create({
   headerLogo: {
     width: 40,
     height: 40,
+    borderRadius: theme.borderRadius.full,
+    backgroundColor: theme.colors.background,
+    alignItems: 'center',
+    justifyContent: 'center',
     marginRight: theme.spacing.sm,
+  },
+  headerLogoEmoji: {
+    fontSize: 24,
   },
   headerTextContainer: {
     flex: 1,

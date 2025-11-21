@@ -120,11 +120,9 @@ export default function LoginScreen() {
               style={styles.header}
             >
               <View style={styles.logoContainer}>
-                <Image
-                  source={require('@/assets/images/logo.png')}
-                  style={styles.logo}
-                  resizeMode="contain"
-                />
+                <View style={styles.logoPlaceholder}>
+                  <Text style={styles.logoEmoji}>🐝</Text>
+                </View>
                 <LinearGradient
                   colors={['#00D9FF', '#8B5CF6']}
                   style={styles.logoGlow}
@@ -367,10 +365,17 @@ const styles = StyleSheet.create({
     position: 'relative',
     marginBottom: theme.spacing.md,
   },
-  logo: {
+  logoPlaceholder: {
     width: 140,
     height: 140,
+    borderRadius: theme.borderRadius.full,
+    backgroundColor: theme.colors.surface,
+    alignItems: 'center',
+    justifyContent: 'center',
     zIndex: 2,
+  },
+  logoEmoji: {
+    fontSize: 80,
   },
   logoGlow: {
     position: 'absolute',
