@@ -22,6 +22,7 @@ export const theme = {
     success: '#10b981',
     warning: '#f59e0b',
     error: '#ef4444',
+    danger: '#dc3545',
     
     border: '#2d3548',
     shadow: 'rgba(0, 0, 0, 0.5)',

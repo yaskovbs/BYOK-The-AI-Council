@@ -1,0 +1,19 @@
+IMPORTANT: Logo File Required
+================================
+
+Please save your BYOK - The AI Council logo as:
+📁 assets/images/logo.png
+
+Requirements:
+- Size: 1024x1024 pixels
+- Format: PNG with transparent background
+- Design: The beautiful "AI Council" logo with the brain and hexagonal members
+
+The app is already configured to use this logo in:
+✅ Splash Screen (when app launches)
+✅ App Icon (iOS/Android home screen)
+✅ Login Screen
+✅ Settings Screen
+✅ Chat Screen header
+
+Once you add the logo.png file, it will automatically appear in all these locations.
