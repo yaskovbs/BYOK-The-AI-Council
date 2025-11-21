@@ -8,14 +8,15 @@ import {
   Pressable,
   KeyboardAvoidingView,
   Platform,
+  Image,
 } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
-import { Screen, MessageBubble } from '@/components';
+import { Screen, MessageBubble, AdBanner } from '@/components';
 import { useCouncil } from '@/hooks/useCouncil';
 import { theme } from '@/constants/theme';
 
 export default function ChatScreen() {
-  const { messages, sendMessage, isThinking, activeModel } = useCouncil();
+  const { messages, sendMessage, isThinking, activeModel, personality } = useCouncil();
   const [input, setInput] = useState('');
 
   const handleSend = async () => {
@@ -34,7 +35,19 @@ export default function ChatScreen() {
         keyboardVerticalOffset={Platform.OS === 'ios' ? 90 : 0}
       >
         <View style={styles.header}>
-          <Text style={styles.headerTitle}>🐝 AI Council Chat</Text>
+          <View style={styles.headerTop}>
+            <Image
+              source={require('@/assets/images/logo.png')}
+              style={styles.headerLogo}
+              resizeMode="contain"
+            />
+            <View style={styles.headerTextContainer}>
+              <Text style={styles.headerTitle}>AI Council Chat</Text>
+              <Text style={styles.headerPersonality}>
+                {personality.charAt(0).toUpperCase() + personality.slice(1)} Mode
+              </Text>
+            </View>
+          </View>
           {activeModel && (
             <Text style={styles.headerSubtitle}>
               {activeModel.toUpperCase()} is thinking...
@@ -74,6 +87,8 @@ export default function ChatScreen() {
             />
           </Pressable>
         </View>
+
+        <AdBanner />
       </KeyboardAvoidingView>
     </Screen>
   );
@@ -88,6 +103,23 @@ const styles = StyleSheet.create({
     backgroundColor: theme.colors.surface,
     borderBottomWidth: 1,
     borderBottomColor: theme.colors.border,
+  },
+  headerTop: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  headerLogo: {
+    width: 40,
+    height: 40,
+    marginRight: theme.spacing.sm,
+  },
+  headerTextContainer: {
+    flex: 1,
+  },
+  headerPersonality: {
+    fontSize: theme.fontSize.xs,
+    color: theme.colors.textSecondary,
+    marginTop: theme.spacing.xs,
   },
   headerTitle: {
     fontSize: theme.fontSize.lg,

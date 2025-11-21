@@ -8,6 +8,7 @@ import {
   KeyboardAvoidingView,
   Platform,
   ScrollView,
+  Image,
 } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { Screen } from '@/components';
@@ -106,7 +107,11 @@ export default function LoginScreen() {
       >
         <ScrollView contentContainerStyle={styles.scrollContent}>
           <View style={styles.header}>
-            <Text style={styles.logo}>🐝</Text>
+            <Image
+              source={require('@/assets/images/logo.png')}
+              style={styles.logo}
+              resizeMode="contain"
+            />
             <Text style={styles.title}>The AI Council</Text>
             <Text style={styles.subtitle}>
               {mode === 'login' ? 'Welcome Back' : 'Join the Council'}
@@ -259,8 +264,9 @@ const styles = StyleSheet.create({
     marginBottom: theme.spacing.xl,
   },
   logo: {
-    fontSize: 60,
-    marginBottom: theme.spacing.sm,
+    width: 120,
+    height: 120,
+    marginBottom: theme.spacing.md,
   },
   title: {
     fontSize: theme.fontSize.xxl,

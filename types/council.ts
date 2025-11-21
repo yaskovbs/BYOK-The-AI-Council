@@ -76,3 +76,22 @@ export interface AuthUser {
   username?: string;
   createdAt?: string;
 }
+
+export type PersonalityMode = 'butler' | 'buddy' | 'guard' | 'default';
+
+export interface PersonalityConfig {
+  id: PersonalityMode;
+  name: string;
+  description: string;
+  icon: string;
+  systemPrompt: string;
+  color: string;
+}
+
+export interface UserPreferences {
+  userId: string;
+  theme: 'light' | 'dark' | 'auto';
+  personality: PersonalityMode;
+  language: 'en' | 'he';
+  notificationsEnabled: boolean;
+}
