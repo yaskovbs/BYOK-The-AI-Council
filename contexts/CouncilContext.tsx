@@ -1,6 +1,7 @@
 import { createContext, useState, useCallback, ReactNode, useEffect } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { CouncilState, Message, AIModel, TaskType, APIKeys, PersonalityMode } from '@/types/council';
+import { initializeAds } from '@/services/adService';
 
 interface CouncilContextType extends CouncilState {
   sendMessage: (text: string) => Promise<void>;
@@ -30,6 +31,7 @@ export function CouncilProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     loadPreferences();
+    initializeAds();
   }, []);
 
   const loadPreferences = async () => {

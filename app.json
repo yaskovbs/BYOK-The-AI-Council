@@ -38,7 +38,22 @@
           "backgroundColor": "#0a0e27"
         }
       ],
-      "expo-web-browser"
+      "expo-web-browser",
+      [
+        "expo-build-properties",
+        {
+          "ios": {
+            "useFrameworks": "static"
+          }
+        }
+      ],
+      [
+        "react-native-google-mobile-ads",
+        {
+          "androidAppId": "ca-app-pub-9953179201685717~6124468956",
+          "iosAppId": "ca-app-pub-9953179201685717~6423141418"
+        }
+      ]
     ],
     "experiments": {
       "typedRoutes": true
@@ -55,6 +70,10 @@
       "EXPO_PUBLIC_FIREBASE_STORAGE_BUCKET": "the-hive-mind-robot.firebasestorage.app",
       "EXPO_PUBLIC_FIREBASE_MESSAGING_SENDER_ID": "1059955046558",
       "EXPO_PUBLIC_FIREBASE_APP_ID": "1:1059955046558:web:3e1b2f5b8c9e0a1b2f5b8c",
+      "EXPO_PUBLIC_ADMOB_ANDROID_APP_ID": "ca-app-pub-9953179201685717~6124468956",
+      "EXPO_PUBLIC_ADMOB_IOS_APP_ID": "ca-app-pub-9953179201685717~6423141418",
+      "EXPO_PUBLIC_ADMOB_ANDROID_BANNER_ID": "ca-app-pub-9953179201685717/5655471769",
+      "EXPO_PUBLIC_ADMOB_IOS_BANNER_ID": "ca-app-pub-9953179201685717/1063713964",
       "eas": {
         "projectId": "the-ai-council"
       }

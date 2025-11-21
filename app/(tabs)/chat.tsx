@@ -11,7 +11,7 @@ import {
   Image,
 } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
-import { Screen, MessageBubble } from '@/components';
+import { Screen, MessageBubble, AdBanner } from '@/components';
 import { useCouncil } from '@/hooks/useCouncil';
 import { theme } from '@/constants/theme';
 
@@ -87,6 +87,8 @@ export default function ChatScreen() {
             />
           </Pressable>
         </View>
+
+        <AdBanner />
       </KeyboardAvoidingView>
     </Screen>
   );

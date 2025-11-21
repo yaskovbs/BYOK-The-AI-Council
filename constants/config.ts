@@ -72,3 +72,15 @@ export const SUPABASE_CONFIG = {
   url: Constants.expoConfig?.extra?.EXPO_PUBLIC_SUPABASE_URL || '',
   anonKey: Constants.expoConfig?.extra?.EXPO_PUBLIC_SUPABASE_ANON_KEY || '',
 };
+
+// AdMob Configuration
+export const ADMOB_CONFIG = {
+  android: {
+    appId: Constants.expoConfig?.extra?.EXPO_PUBLIC_ADMOB_ANDROID_APP_ID || 'ca-app-pub-9953179201685717~6124468956',
+    bannerId: Constants.expoConfig?.extra?.EXPO_PUBLIC_ADMOB_ANDROID_BANNER_ID || 'ca-app-pub-9953179201685717/5655471769',
+  },
+  ios: {
+    appId: Constants.expoConfig?.extra?.EXPO_PUBLIC_ADMOB_IOS_APP_ID || 'ca-app-pub-9953179201685717~6423141418',
+    bannerId: Constants.expoConfig?.extra?.EXPO_PUBLIC_ADMOB_IOS_BANNER_ID || 'ca-app-pub-9953179201685717/1063713964',
+  },
+};
