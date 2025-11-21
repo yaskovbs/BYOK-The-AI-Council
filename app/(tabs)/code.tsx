@@ -9,7 +9,6 @@ import {
   Modal,
   ScrollView,
   Alert,
-  Platform,
 } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import * as DocumentPicker from 'expo-document-picker';
@@ -210,7 +209,7 @@ export default function CodeEditorScreen() {
                   onLongPress={() => handleDeleteFile(item.id)}
                 >
                   <MaterialCommunityIcons
-                    name={getLanguageIcon(item.language) as any}
+                    name={getLanguageIcon(item.language)}
                     size={20}
                     color={
                       selectedFile?.id === item.id

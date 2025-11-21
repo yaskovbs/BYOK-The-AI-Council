@@ -1,14 +1,14 @@
 import { View, Text, StyleSheet, Pressable } from 'react-native';
 import { Redirect } from 'expo-router';
 import { Screen } from '@/components';
-import { MockAuthRouter } from '@/template';
+import { AuthRouter } from '@/template';
 import { theme } from '@/constants/theme';
 
 export default function WelcomeScreen() {
   return (
-    <MockAuthRouter loginRoute="/login">
+    <AuthRouter loginRoute="/login">
       <Redirect href="/(tabs)/chat" />
-    </MockAuthRouter>
+    </AuthRouter>
   );
 }
 

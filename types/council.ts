@@ -32,7 +32,6 @@ export interface APIKeys {
   openai?: string;
   grok?: string;
   firebase?: string;
-  openrouter?: string;
 }
 
 export interface RobotCommand {
