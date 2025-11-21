@@ -1,11 +1,11 @@
 import { Stack } from 'expo-router';
 import { CouncilProvider } from '@/contexts/CouncilContext';
-import { AlertProvider, AuthProvider } from '@/template';
+import { AlertProvider, MockAuthProvider } from '@/template';
 
 export default function RootLayout() {
   return (
     <AlertProvider>
-      <AuthProvider>
+      <MockAuthProvider>
         <CouncilProvider>
           <Stack screenOptions={{ headerShown: false }}>
             <Stack.Screen name="index" />
@@ -13,7 +13,7 @@ export default function RootLayout() {
             <Stack.Screen name="(tabs)" />
           </Stack>
         </CouncilProvider>
-      </AuthProvider>
+      </MockAuthProvider>
     </AlertProvider>
   );
 }

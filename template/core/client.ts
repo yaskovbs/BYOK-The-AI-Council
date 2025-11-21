@@ -25,10 +25,13 @@ class SupabaseManager {
     
     try {
       console.log(`[Template:Client] Creating Supabase client instance #${this.creationCount}`);
-      
+
       const supabaseUrl = process.env.EXPO_PUBLIC_SUPABASE_URL;
       const supabaseAnonKey = process.env.EXPO_PUBLIC_SUPABASE_ANON_KEY;
-      
+
+      console.log('[Template:Client] Debug - EXPO_PUBLIC_SUPABASE_URL:', supabaseUrl);
+      console.log('[Template:Client] Debug - EXPO_PUBLIC_SUPABASE_ANON_KEY:', supabaseAnonKey ? 'present' : 'missing');
+
       if (!supabaseUrl || !supabaseAnonKey) {
         const errorMsg = '[Template:Client] Supabase environment variables missing\n' +
           'Please check EXPO_PUBLIC_SUPABASE_URL and EXPO_PUBLIC_SUPABASE_ANON_KEY in .env file';
@@ -99,4 +102,3 @@ export const safeSupabaseOperation = async <T>(
   const client = getSharedSupabaseClient();
   return await operation(client);
 };
-
