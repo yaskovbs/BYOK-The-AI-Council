@@ -38,22 +38,7 @@
           "backgroundColor": "#0a0e27"
         }
       ],
-      "expo-web-browser",
-      [
-        "expo-build-properties",
-        {
-          "ios": {
-            "useFrameworks": "static"
-          }
-        }
-      ],
-      [
-        "react-native-google-mobile-ads",
-        {
-          "androidAppId": "ca-app-pub-9953179201685717~6124468956",
-          "iosAppId": "ca-app-pub-9953179201685717~6423141418"
-        }
-      ]
+      "expo-web-browser"
     ],
     "experiments": {
       "typedRoutes": true

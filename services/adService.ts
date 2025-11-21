@@ -1,18 +1,15 @@
 import { Platform } from 'react-native';
 import { ADMOB_CONFIG } from '@/constants/config';
-import mobileAds, {
-  BannerAd,
-  BannerAdSize,
-  TestIds,
-  InterstitialAd,
-  AdEventType,
-} from 'react-native-google-mobile-ads';
 
-// Initialize AdMob
+// AdMob Configuration
+// Note: Full AdMob integration requires installing react-native-google-mobile-ads
+// For now, this provides the configuration structure
+
 export const initializeAds = async () => {
   try {
-    await mobileAds().initialize();
-    console.log('AdMob initialized successfully');
+    console.log('AdMob configuration ready');
+    console.log('Android App ID:', ADMOB_CONFIG.android.appId);
+    console.log('iOS App ID:', ADMOB_CONFIG.ios.appId);
   } catch (error) {
     console.log('AdMob initialization error:', error);
   }
@@ -20,49 +17,24 @@ export const initializeAds = async () => {
 
 // Get Banner Ad Unit ID
 export const getBannerAdUnitId = (): string => {
-  if (__DEV__) {
-    return TestIds.BANNER;
-  }
-  
   return Platform.select({
     ios: ADMOB_CONFIG.ios.bannerId,
     android: ADMOB_CONFIG.android.bannerId,
-  }) || TestIds.BANNER;
+  }) || '';
 };
 
 // Get Interstitial Ad Unit ID
 export const getInterstitialAdUnitId = (): string => {
-  if (__DEV__) {
-    return TestIds.INTERSTITIAL;
-  }
-  
   return Platform.select({
     ios: ADMOB_CONFIG.ios.bannerId,
     android: ADMOB_CONFIG.android.bannerId,
-  }) || TestIds.INTERSTITIAL;
+  }) || '';
 };
 
-// Create and load Interstitial Ad
-export const createInterstitialAd = () => {
-  const interstitial = InterstitialAd.createForAdRequest(getInterstitialAdUnitId(), {
-    requestNonPersonalizedAdsOnly: false,
-  });
-
-  return interstitial;
+export const BannerAdSize = {
+  ANCHORED_ADAPTIVE_BANNER: 'ANCHORED_ADAPTIVE_BANNER',
+  BANNER: 'BANNER',
+  FULL_BANNER: 'FULL_BANNER',
+  LARGE_BANNER: 'LARGE_BANNER',
+  MEDIUM_RECTANGLE: 'MEDIUM_RECTANGLE',
 };
-
-// Show Interstitial Ad with error handling
-export const showInterstitialAd = async (interstitial: InterstitialAd): Promise<boolean> => {
-  try {
-    if (interstitial.loaded) {
-      await interstitial.show();
-      return true;
-    }
-    return false;
-  } catch (error) {
-    console.log('Error showing interstitial ad:', error);
-    return false;
-  }
-};
-
-export { BannerAdSize };

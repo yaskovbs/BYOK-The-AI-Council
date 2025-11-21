@@ -1,27 +1,22 @@
-import { View, StyleSheet } from 'react-native';
-import { BannerAd, BannerAdSize } from 'react-native-google-mobile-ads';
-import { getBannerAdUnitId } from '@/services/adService';
+import { View, Text, StyleSheet, Linking, Pressable } from 'react-native';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { theme } from '@/constants/theme';
 
-interface AdBannerProps {
-  size?: BannerAdSize;
-}
-
-export function AdBanner({ size = BannerAdSize.ANCHORED_ADAPTIVE_BANNER }: AdBannerProps) {
-  const adUnitId = getBannerAdUnitId();
+export function AdBanner() {
+  const handleAdClick = () => {
+    Linking.openURL('https://github.com/yaskovbs/The-AI-Council');
+  };
 
   return (
     <View style={styles.container}>
-      <BannerAd
-        unitId={adUnitId}
-        size={size}
-        requestOptions={{
-          requestNonPersonalizedAdsOnly: false,
-        }}
-        onAdFailedToLoad={(error) => {
-          console.log('Banner ad failed to load:', error);
-        }}
-      />
+      <Pressable style={styles.adContent} onPress={handleAdClick}>
+        <MaterialCommunityIcons name="github" size={20} color={theme.colors.primary} />
+        <View style={styles.textContainer}>
+          <Text style={styles.adTitle}>Support Open Source</Text>
+          <Text style={styles.adSubtitle}>Star us on GitHub ⭐</Text>
+        </View>
+      </Pressable>
+      <Text style={styles.adLabel}>Ad</Text>
     </View>
   );
 }
@@ -29,10 +24,38 @@ export function AdBanner({ size = BannerAdSize.ANCHORED_ADAPTIVE_BANNER }: AdBan
 const styles = StyleSheet.create({
   container: {
     backgroundColor: theme.colors.surface,
-    alignItems: 'center',
-    justifyContent: 'center',
-    paddingVertical: theme.spacing.xs,
+    paddingVertical: theme.spacing.sm,
+    paddingHorizontal: theme.spacing.md,
     borderTopWidth: 1,
     borderTopColor: theme.colors.border,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+  },
+  adContent: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    flex: 1,
+  },
+  textContainer: {
+    marginLeft: theme.spacing.sm,
+  },
+  adTitle: {
+    fontSize: theme.fontSize.sm,
+    fontWeight: theme.fontWeight.medium,
+    color: theme.colors.text,
+  },
+  adSubtitle: {
+    fontSize: theme.fontSize.xs,
+    color: theme.colors.textSecondary,
+    marginTop: 2,
+  },
+  adLabel: {
+    fontSize: theme.fontSize.xs,
+    color: theme.colors.textMuted,
+    backgroundColor: theme.colors.border,
+    paddingHorizontal: theme.spacing.xs,
+    paddingVertical: 2,
+    borderRadius: theme.borderRadius.sm,
   },
 });
