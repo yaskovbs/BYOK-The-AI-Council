@@ -1,31 +1,37 @@
+// Modern Dark Theme with Gradients
 export const theme = {
   colors: {
-    background: '#0a0e1a',
-    backgroundLight: '#141824',
-    surface: '#1a1f35',
-    surfaceLight: '#252b42',
+    // Primary colors
+    primary: '#00D9FF',
+    primaryDark: '#0099CC',
+    primaryLight: '#33E0FF',
     
-    primary: '#00d4ff',
-    primaryDark: '#0099cc',
-    secondary: '#7c3aed',
-    accent: '#f472b6',
+    // Background colors
+    background: '#0A0E27',
+    surface: '#151932',
+    surfaceLight: '#1E2340',
     
-    gemini: '#4285f4',
-    claude: '#ff6b35',
-    openai: '#10a37f',
-    grok: '#1da1f2',
+    // Text colors
+    text: '#FFFFFF',
+    textSecondary: '#A0AEC0',
+    textMuted: '#64748B',
     
-    text: '#ffffff',
-    textSecondary: '#9ca3af',
-    textMuted: '#6b7280',
+    // UI colors
+    border: '#2D3748',
+    error: '#FF4757',
+    success: '#2ED573',
+    warning: '#FFA502',
+    info: '#00D9FF',
     
-    success: '#10b981',
-    warning: '#f59e0b',
-    error: '#ef4444',
-    danger: '#dc3545',
+    // AI Model colors
+    gemini: '#4285F4',
+    claude: '#E06C75',
+    openai: '#10A37F',
+    grok: '#FFA500',
     
-    border: '#2d3548',
-    shadow: 'rgba(0, 0, 0, 0.5)',
+    // Gradients
+    gradientStart: '#00D9FF',
+    gradientEnd: '#8B5CF6',
   },
   
   spacing: {
@@ -37,6 +43,23 @@ export const theme = {
     xxl: 48,
   },
   
+  fontSize: {
+    xs: 12,
+    sm: 14,
+    md: 16,
+    lg: 20,
+    xl: 24,
+    xxl: 32,
+    xxxl: 40,
+  },
+  
+  fontWeight: {
+    regular: '400' as const,
+    medium: '500' as const,
+    semibold: '600' as const,
+    bold: '700' as const,
+  },
+  
   borderRadius: {
     sm: 8,
     md: 12,
@@ -45,44 +68,35 @@ export const theme = {
     full: 9999,
   },
   
-  fontSize: {
-    xs: 12,
-    sm: 14,
-    md: 16,
-    lg: 18,
-    xl: 20,
-    xxl: 24,
-    xxxl: 32,
-  },
-  
-  fontWeight: {
-    normal: '400' as const,
-    medium: '500' as const,
-    semibold: '600' as const,
-    bold: '700' as const,
-  },
-  
   shadows: {
     sm: {
       shadowColor: '#000',
       shadowOffset: { width: 0, height: 2 },
-      shadowOpacity: 0.25,
-      shadowRadius: 3.84,
+      shadowOpacity: 0.1,
+      shadowRadius: 4,
       elevation: 2,
     },
     md: {
       shadowColor: '#000',
       shadowOffset: { width: 0, height: 4 },
-      shadowOpacity: 0.3,
-      shadowRadius: 4.65,
+      shadowOpacity: 0.15,
+      shadowRadius: 8,
       elevation: 4,
     },
     lg: {
-      shadowColor: '#000',
-      shadowOffset: { width: 0, height: 6 },
-      shadowOpacity: 0.37,
-      shadowRadius: 7.49,
+      shadowColor: '#00D9FF',
+      shadowOffset: { width: 0, height: 8 },
+      shadowOpacity: 0.2,
+      shadowRadius: 16,
       elevation: 8,
     },
   },
+  
+  animations: {
+    fast: 200,
+    normal: 300,
+    slow: 500,
+  },
 };
+
+export type Theme = typeof theme;
