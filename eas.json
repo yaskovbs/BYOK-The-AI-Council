@@ -3,6 +3,7 @@
     "version": ">= 16.13.3",
     "appVersionSource": "remote"
   },
+  "packageManager": "pnpm",
   "build": {
     "development": {
       "developmentClient": true,
@@ -16,7 +17,6 @@
       "distribution": "internal"
     },
     "production": {
-      "packageManager": "pnpm",
       "autoIncrement": true,
       "cache": {},
       "env": {
