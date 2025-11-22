@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "The AI Council",
-    "slug": "byok-ai-council",
+    "slug": "byok-the-ai-council",
     "version": "1.0.0",
     "orientation": "portrait",
     "scheme": "theaicouncil",
@@ -13,6 +13,12 @@
       "googleServicesFile": "./GoogleService-Info.plist",
       "infoPlist": {
         "CFBundleURLTypes": [
+          {
+            "CFBundleURLSchemes": [
+              "com.googleusercontent.apps.1059955046558-0s3mfdp6g427in9929jk7lanhltrsfd6",
+              "theaicouncil"
+            ]
+          },
           {
             "CFBundleURLSchemes": [
               "com.googleusercontent.apps.1059955046558-0s3mfdp6g427in9929jk7lanhltrsfd6",
@@ -37,7 +43,10 @@
               "pathPrefix": "/__/auth/handler"
             }
           ],
-          "category": ["BROWSABLE", "DEFAULT"]
+          "category": [
+            "BROWSABLE",
+            "DEFAULT"
+          ]
         }
       ]
     },
@@ -71,8 +80,16 @@
       "EXPO_PUBLIC_ADMOB_ANDROID_BANNER_ID": "ca-app-pub-9953179201685717/5655471769",
       "EXPO_PUBLIC_ADMOB_IOS_BANNER_ID": "ca-app-pub-9953179201685717/1063713964",
       "eas": {
-        "projectId": "1e9a4124-62b6-4fff-8f25-c97dbcc17e21"
-      }
+        "projectId": "961fef6e-4939-40b4-89b7-f04b4994658c"
+      },
+      "router": {}
+    },
+    "owner": "byok-the-ai-council",
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/961fef6e-4939-40b4-89b7-f04b4994658c"
     }
   }
 }
