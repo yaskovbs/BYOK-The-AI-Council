@@ -376,7 +376,7 @@ export function getModelsByProvider(provider: string): OpenRouterModel[] {
 }
 
 export function getModelsByCategory(category: string): OpenRouterModel[] {
-  return OPENROUTER_MODELS.filter(model => model.model.category === category);
+  return OPENROUTER_MODELS.filter(model => model.category === category);
 }
 
 export function searchModels(query: string): OpenRouterModel[] {

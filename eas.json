@@ -16,6 +16,7 @@
       "distribution": "internal"
     },
     "production": {
+      "packageManager": "pnpm",
       "autoIncrement": true,
       "cache": {},
       "env": {
