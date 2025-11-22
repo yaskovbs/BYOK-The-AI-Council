@@ -242,22 +242,9 @@ export default function LoginScreen() {
 
               <View style={styles.divider}>
                 <View style={styles.dividerLine} />
-                <Text style={styles.dividerText}>OR CONTINUE WITH</Text>
+                <Text style={styles.dividerText}>OR USE EMAIL CODE</Text>
                 <View style={styles.dividerLine} />
               </View>
-
-              <Pressable
-                style={({ pressed }) => [
-                  styles.socialButton,
-                  operationLoading && styles.buttonDisabled,
-                  pressed && styles.buttonPressed,
-                ]}
-                onPress={handleGoogleLogin}
-                disabled={operationLoading}
-              >
-                <MaterialCommunityIcons name="google" size={24} color="#EA4335" />
-                <Text style={styles.socialButtonText}>Google</Text>
-              </Pressable>
 
               <Pressable
                 style={({ pressed }) => [
@@ -555,3 +542,6 @@ const styles = StyleSheet.create({
     lineHeight: 18,
   },
 });
+
+// Note: Google OAuth temporarily disabled due to redirect URI configuration.
+// Use Email/Password or OTP login instead.
