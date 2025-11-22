@@ -24,10 +24,6 @@
       }
     },
     "android": {
-      "adaptiveIcon": {
-        "foregroundImage": "./assets/images/adaptive-icon.png",
-        "backgroundColor": "#0a0e27"
-      },
       "edgeToEdgeEnabled": true,
       "package": "com.yaskovbs.theaicouncil",
       "googleServicesFile": "./google-services.json",
