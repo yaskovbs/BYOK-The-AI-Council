@@ -16,7 +16,8 @@
         "CFBundleURLTypes": [
           {
             "CFBundleURLSchemes": [
-              "com.googleusercontent.apps.1059955046558-0s3mfdp6g427in9929jk7lanhltrsfd6"
+              "com.googleusercontent.apps.1059955046558-0s3mfdp6g427in9929jk7lanhltrsfd6",
+              "theaicouncil"
             ]
           }
         ]
@@ -29,7 +30,21 @@
       },
       "edgeToEdgeEnabled": true,
       "package": "com.yaskovbs.theaicouncil",
-      "googleServicesFile": "./google-services.json"
+      "googleServicesFile": "./google-services.json",
+      "intentFilters": [
+        {
+          "action": "VIEW",
+          "autoVerify": true,
+          "data": [
+            {
+              "scheme": "https",
+              "host": "the-hive-mind-robot.firebaseapp.com",
+              "pathPrefix": "/__/auth/handler"
+            }
+          ],
+          "category": ["BROWSABLE", "DEFAULT"]
+        }
+      ]
     },
     "web": {
       "bundler": "metro",
