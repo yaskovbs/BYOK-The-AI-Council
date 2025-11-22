@@ -10,17 +10,14 @@
       "cache": {},
       "env": {
         "NPM_CONFIG_LEGACY_PEER_DEPS": "true"
-      },
-      "packageManager": "pnpm"
+      }
     },
     "preview": {
-      "distribution": "internal",
-      "packageManager": "pnpm"
+      "distribution": "internal"
     },
     "production": {
       "autoIncrement": true,
       "cache": {},
-      "packageManager": "pnpm",
       "env": {
         "NPM_CONFIG_LEGACY_PEER_DEPS": "true"
       }
