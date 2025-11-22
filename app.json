@@ -23,8 +23,15 @@
               "com.googleusercontent.apps.1059955046558-0s3mfdp6g427in9929jk7lanhltrsfd6",
               "theaicouncil"
             ]
+          },
+          {
+            "CFBundleURLSchemes": [
+              "com.googleusercontent.apps.1059955046558-0s3mfdp6g427in9929jk7lanhltrsfd6",
+              "theaicouncil"
+            ]
           }
-        ]
+        ],
+        "ITSAppUsesNonExemptEncryption": false
       }
     },
     "android": {
@@ -51,7 +58,7 @@
     },
     "web": {
       "bundler": "metro",
-      "output": "static",
+      "output": "single",
       "favicon": "./assets/images/favicon.png"
     },
     "plugins": [
@@ -60,7 +67,7 @@
       "expo-web-browser"
     ],
     "experiments": {
-      "typedRoutes": true
+      "typedRoutes": false
     },
     "extra": {
       "EXPO_PUBLIC_SUPABASE_URL": "YOUR_SUPABASE_URL_HERE",
@@ -79,7 +86,7 @@
       "EXPO_PUBLIC_ADMOB_ANDROID_BANNER_ID": "YOUR_ADMOB_ANDROID_BANNER_ID_HERE",
       "EXPO_PUBLIC_ADMOB_IOS_BANNER_ID": "YOUR_ADMOB_IOS_BANNER_ID_HERE",
       "eas": {
-        "projectId": "90c395c3-333a-4550-b8a8-cfcfa97dd97c"
+        "projectId": "1cb51bcc-3dbb-48ac-aced-dd270568df1c"
       },
       "router": {}
     },
