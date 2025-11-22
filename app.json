@@ -24,6 +24,18 @@
               "com.googleusercontent.apps.1059955046558-0s3mfdp6g427in9929jk7lanhltrsfd6",
               "theaicouncil"
             ]
+          },
+          {
+            "CFBundleURLSchemes": [
+              "com.googleusercontent.apps.1059955046558-0s3mfdp6g427in9929jk7lanhltrsfd6",
+              "theaicouncil"
+            ]
+          },
+          {
+            "CFBundleURLSchemes": [
+              "com.googleusercontent.apps.1059955046558-0s3mfdp6g427in9929jk7lanhltrsfd6",
+              "theaicouncil"
+            ]
           }
         ]
       }
@@ -33,6 +45,21 @@
       "package": "com.yaskovbs.theaicouncil",
       "googleServicesFile": "./google-services.json",
       "intentFilters": [
+        {
+          "action": "VIEW",
+          "autoVerify": true,
+          "data": [
+            {
+              "scheme": "https",
+              "host": "the-hive-mind-robot.firebaseapp.com",
+              "pathPrefix": "/__/auth/handler"
+            }
+          ],
+          "category": [
+            "BROWSABLE",
+            "DEFAULT"
+          ]
+        },
         {
           "action": "VIEW",
           "autoVerify": true,
@@ -80,16 +107,16 @@
       "EXPO_PUBLIC_ADMOB_ANDROID_BANNER_ID": "YOUR_ADMOB_ANDROID_BANNER_ID_HERE",
       "EXPO_PUBLIC_ADMOB_IOS_BANNER_ID": "YOUR_ADMOB_IOS_BANNER_ID_HERE",
       "eas": {
-        "projectId": "961fef6e-4939-40b4-89b7-f04b4994658c"
+        "projectId": "90c395c3-333a-4550-b8a8-cfcfa97dd97c"
       },
       "router": {}
     },
-    "owner": "byok-the-ai-council",
+    "owner": "yaaaskovbs",
     "runtimeVersion": {
       "policy": "appVersion"
     },
     "updates": {
-      "url": "https://u.expo.dev/961fef6e-4939-40b4-89b7-f04b4994658c"
+      "url": "https://u.expo.dev/90c395c3-333a-4550-b8a8-cfcfa97dd97c"
     }
   }
 }
