@@ -18,24 +18,6 @@
               "com.googleusercontent.apps.1059955046558-0s3mfdp6g427in9929jk7lanhltrsfd6",
               "theaicouncil"
             ]
-          },
-          {
-            "CFBundleURLSchemes": [
-              "com.googleusercontent.apps.1059955046558-0s3mfdp6g427in9929jk7lanhltrsfd6",
-              "theaicouncil"
-            ]
-          },
-          {
-            "CFBundleURLSchemes": [
-              "com.googleusercontent.apps.1059955046558-0s3mfdp6g427in9929jk7lanhltrsfd6",
-              "theaicouncil"
-            ]
-          },
-          {
-            "CFBundleURLSchemes": [
-              "com.googleusercontent.apps.1059955046558-0s3mfdp6g427in9929jk7lanhltrsfd6",
-              "theaicouncil"
-            ]
           }
         ]
       }
@@ -45,21 +27,6 @@
       "package": "com.yaskovbs.theaicouncil",
       "googleServicesFile": "./google-services.json",
       "intentFilters": [
-        {
-          "action": "VIEW",
-          "autoVerify": true,
-          "data": [
-            {
-              "scheme": "https",
-              "host": "the-hive-mind-robot.firebaseapp.com",
-              "pathPrefix": "/__/auth/handler"
-            }
-          ],
-          "category": [
-            "BROWSABLE",
-            "DEFAULT"
-          ]
-        },
         {
           "action": "VIEW",
           "autoVerify": true,
