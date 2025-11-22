@@ -58,9 +58,11 @@ export function CouncilVisualizer() {
       />
 
       <View style={styles.header}>
-        <View style={styles.headerLogo}>
-          <Text style={styles.headerLogoEmoji}>🐝</Text>
-        </View>
+        <Image
+          source={require('@/assets/images/logo.png')}
+          style={styles.headerLogo}
+          resizeMode="contain"
+        />
         <View style={styles.headerTextContainer}>
           <Text style={styles.title}>THE AI COUNCIL</Text>
           <Text style={styles.subtitle}>Decentralized Intelligence Network</Text>

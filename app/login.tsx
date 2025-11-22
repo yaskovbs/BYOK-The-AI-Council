@@ -120,9 +120,11 @@ export default function LoginScreen() {
               style={styles.header}
             >
               <View style={styles.logoContainer}>
-                <View style={styles.logoPlaceholder}>
-                  <Text style={styles.logoEmoji}>🐝</Text>
-                </View>
+                <Image
+                  source={require('@/assets/images/logo.png')}
+                  style={styles.logo}
+                  resizeMode="contain"
+                />
                 <LinearGradient
                   colors={['#00D9FF', '#8B5CF6']}
                   style={styles.logoGlow}

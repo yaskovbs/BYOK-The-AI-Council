@@ -36,9 +36,11 @@ export default function ChatScreen() {
       >
         <View style={styles.header}>
           <View style={styles.headerTop}>
-            <View style={styles.headerLogo}>
-              <Text style={styles.headerLogoEmoji}>🐝</Text>
-            </View>
+            <Image
+              source={require('@/assets/images/logo.png')}
+              style={styles.headerLogo}
+              resizeMode="contain"
+            />
             <View style={styles.headerTextContainer}>
               <Text style={styles.headerTitle}>AI Council Chat</Text>
               <Text style={styles.headerPersonality}>
