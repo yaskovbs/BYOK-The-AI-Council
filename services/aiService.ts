@@ -1,10 +1,12 @@
 import { API_KEYS } from '@/constants/config';
 import { AIModel } from '@/types/council';
+import { OPENROUTER_MODELS, getModelById, getRecommendedModel, type OpenRouterModel } from '@/constants/openrouter-models';
 
 interface AIServiceConfig {
-  model: AIModel;
+  model: AIModel | string; // Can be AIModel or OpenRouter model ID
   prompt: string;
   apiKey?: string;
+  useOpenRouter?: boolean;
 }
 
 interface AIResponse {
@@ -14,10 +16,16 @@ interface AIResponse {
 
 export const aiService = {
   async sendMessage(config: AIServiceConfig): Promise<AIResponse> {
-    const { model, prompt, apiKey } = config;
+    const { model, prompt, apiKey, useOpenRouter } = config;
 
     try {
-      switch (model) {
+      // If useOpenRouter is true or model is an OpenRouter ID, use OpenRouter
+      if (useOpenRouter || (typeof model === 'string' && model.includes('/'))) {
+        return await this.callOpenRouter(prompt, model as string);
+      }
+
+      // Otherwise use direct API calls
+      switch (model as AIModel) {
         case 'gemini':
           return await this.callGemini(prompt, apiKey || API_KEYS.gemini);
         case 'claude':
@@ -169,15 +177,22 @@ export const aiService = {
     }
   },
 
-  async callOpenRouter(prompt: string, model: string): Promise<AIResponse> {
-    if (!API_KEYS.openrouter) {
+  async callOpenRouter(prompt: string, modelIdOrName: string): Promise<AIResponse> {
+    if (!API_KEYS.openrouter || API_KEYS.openrouter === 'your_openrouter_api_key') {
       return { 
         text: '', 
-        error: 'OpenRouter API key not configured' 
+        error: 'OpenRouter API key not configured. Please add it in Settings.' 
       };
     }
 
     try {
+      // If modelIdOrName doesn't contain '/', it's a model name - find the recommended model
+      let modelId = modelIdOrName;
+      if (!modelIdOrName.includes('/')) {
+        const recommendedModel = getRecommendedModel(modelIdOrName);
+        modelId = recommendedModel.id;
+      }
+
       const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
         method: 'POST',
         headers: {
@@ -187,14 +202,15 @@ export const aiService = {
           'X-Title': 'The AI Council',
         },
         body: JSON.stringify({
-          model,
+          model: modelId,
           messages: [{ role: 'user', content: prompt }],
           max_tokens: 4096,
         }),
       });
 
       if (!response.ok) {
-        throw new Error(`OpenRouter API error: ${response.status}`);
+        const errorData = await response.json().catch(() => ({}));
+        throw new Error(`OpenRouter API error: ${response.status} - ${errorData.error?.message || 'Unknown error'}`);
       }
 
       const data = await response.json();
@@ -237,5 +253,31 @@ export const aiService = {
     }
 
     return 'gemini';
+  },
+
+  // === OPENROUTER SPECIFIC METHODS ===
+
+  getAvailableModels(): OpenRouterModel[] {
+    return OPENROUTER_MODELS;
+  },
+
+  getModelInfo(modelId: string): OpenRouterModel | undefined {
+    return getModelById(modelId);
+  },
+
+  getRecommendedModelForTask(task: string): OpenRouterModel {
+    return getRecommendedModel(task);
+  },
+
+  async testOpenRouterConnection(): Promise<{ success: boolean; error?: string }> {
+    try {
+      const result = await this.callOpenRouter('Hello', 'google/gemini-2.5-flash-lite');
+      if (result.error) {
+        return { success: false, error: result.error };
+      }
+      return { success: true };
+    } catch (error: any) {
+      return { success: false, error: error.message };
+    }
   },
 };
