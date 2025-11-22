@@ -3,7 +3,6 @@
     "version": ">= 16.13.3",
     "appVersionSource": "remote"
   },
-  "packageManager": "pnpm",
   "build": {
     "development": {
       "developmentClient": true,
@@ -11,14 +10,17 @@
       "cache": {},
       "env": {
         "NPM_CONFIG_LEGACY_PEER_DEPS": "true"
-      }
+      },
+      "packageManager": "pnpm"
     },
     "preview": {
-      "distribution": "internal"
+      "distribution": "internal",
+      "packageManager": "pnpm"
     },
     "production": {
       "autoIncrement": true,
       "cache": {},
+      "packageManager": "pnpm",
       "env": {
         "NPM_CONFIG_LEGACY_PEER_DEPS": "true"
       }
