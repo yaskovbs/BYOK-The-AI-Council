@@ -14,7 +14,6 @@ export interface OpenRouterModel {
     input: number;  // per million tokens
     output: number; // per million tokens
   };
-  audioPricing?: number; // per million audio seconds/tokens, optional
   capabilities: string[];
   description: string;
 }
@@ -40,48 +39,6 @@ export const OPENROUTER_MODELS: OpenRouterModel[] = [
     pricing: { input: 2, output: 12 },
     capabilities: ['image-generation', 'multimodal', 'design'],
     description: 'Advanced image generation and editing built on Gemini 3 Pro',
-  },
-
-  // === IMAGE GENERATION MODELS ===
-  {
-    id: 'openai/gpt-5-image-mini',
-    name: 'GPT-5 Image Mini',
-    provider: 'OpenAI',
-    category: 'specialized',
-    contextWindow: 400000,
-    pricing: { input: 2.50, output: 2 },
-    capabilities: ['image-generation', 'multimodal', 'efficient'],
-    description: 'Natively multimodal model for efficient image generation',
-  },
-  {
-    id: 'openai/gpt-5-image',
-    name: 'GPT-5 Image',
-    provider: 'OpenAI',
-    category: 'specialized',
-    contextWindow: 400000,
-    pricing: { input: 10, output: 10 },
-    capabilities: ['image-generation', 'multimodal', 'advanced'],
-    description: 'Combines advanced language capabilities with state-of-the-art image generation',
-  },
-  {
-    id: 'google/gemini-2.5-flash-image',
-    name: 'Gemini 2.5 Flash Image (Nano Banana)',
-    provider: 'Google',
-    category: 'specialized',
-    contextWindow: 33000,
-    pricing: { input: 0.30, output: 2.50 },
-    capabilities: ['image-generation', 'editing', 'multimodal'],
-    description: 'State-of-the-art image generation with contextual understanding',
-  },
-  {
-    id: 'google/gemini-2.5-flash-image-preview',
-    name: 'Gemini 2.5 Flash Image Preview',
-    provider: 'Google',
-    category: 'specialized',
-    contextWindow: 33000,
-    pricing: { input: 0.30, output: 2.50 },
-    capabilities: ['image-generation', 'editing', 'multimodal'],
-    description: 'Preview version of Nano Banana image model',
   },
   {
     id: 'google/gemini-2.5-pro',
@@ -391,184 +348,6 @@ export const OPENROUTER_MODELS: OpenRouterModel[] = [
     capabilities: ['conversational', 'open-source'],
     description: 'General-purpose open-source chat model',
   },
-  // === EMBEDDING MODELS ===
-  {
-    id: 'google/gemini-embedding-001',
-    name: 'Gemini Embedding 001',
-    provider: 'Google',
-    category: 'specialized',
-    contextWindow: 20000,
-    pricing: { input: 0.15, output: 0 },
-    capabilities: ['embedding', 'text', 'multilingual', 'domains'],
-    description: 'Unified cutting edge experience across domains, science, legal, finance, coding',
-  },
-  {
-    id: 'openai/text-embedding-ada-002',
-    name: 'Text Embedding Ada 002',
-    provider: 'OpenAI',
-    category: 'specialized',
-    contextWindow: 8000,
-    pricing: { input: 0.10, output: 0 },
-    capabilities: ['embedding', 'text', 'legacy'],
-    description: 'OpenAI\'s legacy text embedding model',
-  },
-  {
-    id: 'mistralai/codestral-embed-2505',
-    name: 'Codestral Embed 2505',
-    provider: 'Mistral AI',
-    category: 'specialized',
-    contextWindow: 8000,
-    pricing: { input: 0.15, output: 0 },
-    capabilities: ['embedding', 'code', 'retrieval', 'assistants'],
-    description: 'Specially designed for code embeddings, databases, repositories, coding assistants',
-  },
-  {
-    id: 'openai/text-embedding-3-large',
-    name: 'Text Embedding 3 Large',
-    provider: 'OpenAI',
-    category: 'specialized',
-    contextWindow: 8000,
-    pricing: { input: 0.13, output: 0 },
-    capabilities: ['embedding', 'text', 'high-accuracy', 'multilingual'],
-    description: 'Most capable embedding model for both english and non-english tasks',
-  },
-  {
-    id: 'openai/text-embedding-3-small',
-    name: 'Text Embedding 3 Small',
-    provider: 'OpenAI',
-    category: 'specialized',
-    contextWindow: 8000,
-    pricing: { input: 0.02, output: 0 },
-    capabilities: ['embedding', 'text', 'economical', 'similarity'],
-    description: 'Improved, more performant ada model for relatedness, search, clustering',
-  },
-  {
-    id: 'qwen/qwen3-embedding-8b',
-    name: 'Qwen3 Embedding 8B',
-    provider: 'Qwen',
-    category: 'specialized',
-    contextWindow: 32000,
-    pricing: { input: 0.01, output: 0 },
-    capabilities: ['embedding', 'multilingual', 'long-text', 'ranking'],
-    description: 'Latest proprietary model with exceptional multilingual, long-text understanding, reasoning',
-  },
-  {
-    id: 'qwen/qwen3-embedding-4b',
-    name: 'Qwen3 Embedding 4B',
-    provider: 'Qwen',
-    category: 'specialized',
-    contextWindow: 33000,
-    pricing: { input: 0.02, output: 0 },
-    capabilities: ['embedding', 'multilingual', 'ranking'],
-    description: 'Part of Qwen3 series for text embedding and ranking tasks',
-  },
-  {
-    id: 'qwen/qwen3-embedding-0.6b',
-    name: 'Qwen3 Embedding 0.6B',
-    provider: 'Qwen',
-    category: 'specialized',
-    contextWindow: 8000,
-    pricing: { input: 0, output: 0 },
-    capabilities: ['embedding', 'lightweight', 'ranking'],
-    description: 'Small embedding model for text retrieval, classification, clustering, bitext mining',
-  },
-  {
-    id: 'thenlper/gte-base',
-    name: 'GTE-Base',
-    provider: 'Thenlper',
-    category: 'specialized',
-    contextWindow: 512,
-    pricing: { input: 0.005, output: 0 },
-    capabilities: ['embedding', 'text', 'similarity', 'semantic-search'],
-    description: '768-dimensional dense vector space for textual similarity and semantic search',
-  },
-  {
-    id: 'thenlper/gte-large',
-    name: 'GTE-Large',
-    provider: 'Thenlper',
-    category: 'specialized',
-    contextWindow: 512,
-    pricing: { input: 0.01, output: 0 },
-    capabilities: ['embedding', 'text', 'high-quality', 'retrieval'],
-    description: '1024-dimensional embeddings for information retrieval, semantic textual similarity, reranking',
-  },
-  {
-    id: 'intfloat/e5-large-v2',
-    name: 'E5-Large-v2',
-    provider: 'Intfloat',
-    category: 'specialized',
-    contextWindow: 512,
-    pricing: { input: 0.01, output: 0 },
-    capabilities: ['embedding', 'text', 'retrieval', 'similarity-scoring'],
-    description: '1024-dimensional high-accuracy embeddings for retrieval, semantic search, reranking',
-  },
-
-  // === ALLENAI OLMO SERIES ===
-  {
-    id: 'allenai/olmo-3-32b-think',
-    name: 'Olmo 3 32B Think',
-    provider: 'AllenAI',
-    category: 'advanced',
-    contextWindow: 66000,
-    pricing: { input: 0.20, output: 0.35 },
-    capabilities: ['reasoning', 'deep-logic', 'complex-chains'],
-    description: 'Olmo 3 32B Think is a large-scale, 32-billion-parameter model purpose-built for deep reasoning, complex logic chains and advanced instruction-following scenarios',
-  },
-  {
-    id: 'allenai/olmo-3-7b-instruct',
-    name: 'Olmo 3 7B Instruct',
-    provider: 'AllenAI',
-    category: 'advanced',
-    contextWindow: 66000,
-    pricing: { input: 0.10, output: 0.20 },
-    capabilities: ['instruction-following', 'qa', 'conversational'],
-    description: 'Olmo 3 7B Instruct is a supervised instruction-fine-tuned variant optimized for instruction-following, question-answering, and natural conversational dialogue',
-  },
-  {
-    id: 'allenai/olmo-3-7b-think',
-    name: 'Olmo 3 7B Think',
-    provider: 'AllenAI',
-    category: 'advanced',
-    contextWindow: 66000,
-    pricing: { input: 0.12, output: 0.20 },
-    capabilities: ['reasoning', 'inference', 'conversational-context'],
-    description: 'Olmo 3 7B Think is a research-oriented language model in the Olmo family designed for advanced reasoning and instruction-driven tasks',
-  },
-
-  // === NVIDIA MODELS ===
-  {
-    id: 'nvidia/nemotron-nano-12b-2-vl-free',
-    name: 'Nemotron Nano 12B 2 VL (free)',
-    provider: 'NVIDIA',
-    category: 'mini',
-    contextWindow: 128000,
-    pricing: { input: 0, output: 0 },
-    capabilities: ['multimodal', 'video', 'document-intelligence', 'free'],
-    description: 'NVIDIA Nemotron Nano 2 VL is a 12-billion-parameter open multimodal reasoning model designed for video understanding and document intelligence',
-  },
-  {
-    id: 'nvidia/nemotron-nano-12b-2-vl',
-    name: 'Nemotron Nano 12B 2 VL',
-    provider: 'NVIDIA',
-    category: 'advanced',
-    contextWindow: 131000,
-    pricing: { input: 0.20, output: 0.60 },
-    capabilities: ['multimodal', 'video', 'document-intelligence', 'hybrid-architecture'],
-    description: 'Hybrid Transformer-Mamba architecture for high-throughput and lower latency multimodal understanding',
-  },
-
-  // === AUDIO MODELS ===
-  {
-    id: 'mistralai/voxtral-small-24b-2507',
-    name: 'Voxtral Small 24B 2507',
-    provider: 'Mistral AI',
-    category: 'advanced',
-    contextWindow: 32000,
-    pricing: { input: 0.10, output: 0.30 },
-    audioPricing: 100,
-    capabilities: ['audio', 'speech-transcription', 'translation', 'understanding'],
-    description: 'Voxtral Small is an enhancement of Mistral Small 3, incorporating state-of-the-art audio input capabilities while retaining best-in-class text performance',
-  },
 ];
 
 export const MODEL_CATEGORIES = {
@@ -597,7 +376,7 @@ export function getModelsByProvider(provider: string): OpenRouterModel[] {
 }
 
 export function getModelsByCategory(category: string): OpenRouterModel[] {
-  return OPENROUTER_MODELS.filter(model => model.category === category);
+  return OPENROUTER_MODELS.filter(model => model.model.category === category);
 }
 
 export function searchModels(query: string): OpenRouterModel[] {
